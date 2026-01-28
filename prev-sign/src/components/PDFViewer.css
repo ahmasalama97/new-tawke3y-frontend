@@ -1,0 +1,138 @@
+.pdf-viewer {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.pdf-viewer-empty {
+  background: white;
+  border-radius: 12px;
+  padding: 60px 20px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f9fafb;
+  border-radius: 8px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.page-controls,
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.page-controls button,
+.zoom-controls button {
+  padding: 8px 16px;
+  background: #042f36;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.page-controls button:hover:not(:disabled),
+.zoom-controls button:hover {
+  background: #042f36;
+}
+
+.page-controls button:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+.page-controls span,
+.zoom-controls span {
+  font-weight: 600;
+  color: #374151;
+  min-width: 100px;
+  text-align: center;
+}
+
+.pdf-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+  background: #f9fafb;
+  position: relative;
+}
+
+.pdf-page-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.pdf-page-wrapper.placement-mode {
+  cursor: crosshair;
+}
+
+.pdf-page-wrapper.placement-mode::before {
+  content: 'Click to place signature';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #042f36;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 100;
+  pointer-events: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.placement-hint {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #dbeafe;
+  color: #1e40af;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.loading,
+.error {
+  padding: 40px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.error {
+  color: #ef4444;
+}
+
+/* React-PDF styles */
+.react-pdf__Page {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.react-pdf__Page__canvas {
+  display: block;
+}
