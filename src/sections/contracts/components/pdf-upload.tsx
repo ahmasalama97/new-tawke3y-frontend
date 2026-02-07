@@ -22,14 +22,14 @@ export const PDFUpload: React.FC<PDFUploadProps> = ({ onFileSelect }) => {
       alert('Please select a valid PDF file');
       return;
     }
-    
+
     // Check file size (1GB = 1073741824 bytes)
     const maxSize = 1073741824;
     if (file.size > maxSize) {
       alert('File size exceeds 1GB limit. Please select a smaller file.');
       return;
     }
-    
+
     onFileSelect(file);
   };
 
